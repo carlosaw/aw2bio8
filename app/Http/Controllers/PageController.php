@@ -14,14 +14,34 @@ class PageController extends Controller
 
         if($page) {
             // Background
-            $bg = '';
+            $bg = '#FFFFFF';
+            switch($page->op_bg_type) {
+                case 'image':
+                    $bg = "url('".url('/media/uploads').'/'.$page->op_bg_value."')";
+                break;
+                case 'color':
+                    $colors = explode(',', $page->op_bg_value);
+                    $bg = 'linear-gradient(90deg,';
+                    $bg .= $colors[0].',';
+                    $bg .= !empty($colors[1]) ? $colors[1] : $colors[0];
+                    $bg .=')';
+                break;
+            }
             
             // Links
-            $links = [];
+            $links = Link::where('id_page', $page->id)
+                ->where('status', 1)            
+                ->orderBy('order')
+                ->get();
             // Registrar a visualização
+            $view = View::firstOrNew(// Se tem registro da página pega, senão Cria.
+                ['id_page' => $page->id, 'view_date' => date('Y-m-d')]
+            );
+            $view->total++;
+            $view->save();
 
             return view('page', [
-                'font-color' => $page->op_font_color,
+                'font_color' => $page->op_font_color,
                 'profile_image' => url('/media/uploads').'/'.$page->op_profile_image,
                 'title' => $page->op_title,
                 'description' => $page->op_description,
@@ -32,5 +52,6 @@ class PageController extends Controller
         } else {
             return view('notfound');
         }
+        
     }
 }
