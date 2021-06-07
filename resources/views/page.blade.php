@@ -46,7 +46,7 @@
     border-radius: 0px;
   }
   .linkArea a.linkrounded {
-    border-radius: 50px;
+    border-radius: 12px;
   }
   .banner a {
     color: {{ $font_color }};
