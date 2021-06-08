@@ -1,19 +1,19 @@
 @extends('admin.template')
 
-@section('title', 'Aw2Web - 123 - Links')
+@section('title', 'Aw2Web - '.$page->op_title.' - Links')
 
 @section('content')
   <div class="preheader">
-    Página: 123
+    Página: {{$page->op_title}}
   </div>
 
   <div class="area">
     <div class="leftside">
       <header>
         <ul>
-          <li @if($menu=='links') class="active" @endif><a href="{{url('admin/123/links')}}">Links</a></li>
-          <li @if($menu=='design') class="active" @endif><a href="{{url('admin/123/design')}}">Aparência</a></li>
-          <li @if($menu=='stats') class="active" @endif><a href="{{url('admin/123/stats')}}">Estatísticas</a></li>
+          <li @if($menu=='links') class="active" @endif><a href="{{url('admin/'.$page->slug.'/links')}}">Links</a></li>
+          <li @if($menu=='design') class="active" @endif><a href="{{url('admin/'.$page->slug.'/design')}}">Aparência</a></li>
+          <li @if($menu=='stats') class="active" @endif><a href="{{url('admin/'.$page->slug.'/stats')}}">Estatísticas</a></li>
         </ul>
       </header>
 
@@ -21,7 +21,7 @@
 
     </div>
     <div class="rightside">
-      <iframe frameborder="0" src="{{url('/slug')}}"></iframe>
+      <iframe frameborder="0" src="{{url('/'.$page->slug)}}"></iframe>
     </div>
   </div>
 

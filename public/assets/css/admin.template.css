@@ -6,6 +6,7 @@ body {
   margin: 0;
   display: flex;
   min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
 }
 nav {
   position: fixed;
@@ -98,4 +99,47 @@ table td {
   border: 10px solid #000;
   border-radius: 20px;
   margin: 20px;
+}
+
+
+.bigbutton {
+  display: block;
+  margin: 20px;
+  padding: 15px;
+  background-color: #CCC;
+  border-radius: 10px;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+}
+.bigbutton:hover {
+  background-color: rgb(201, 197, 197);
+}
+
+#links {
+  padding: 0;
+  list-style: none;
+  margin: 20px;
+}
+.link--item {
+  display: flex;
+  background-color: #FFF;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  align-items: center;
+  box-shadow: 0px 2px 2px #CCC;
+}
+.link--item-order {
+  cursor: move;
+  margin-right: 10px;
+}
+.link--item-info {
+  flex: 1;
+}
+.link--item-title {
+  font-weight: bold;
+}
+.link--item-buttons a:hover {
+  border-bottom: 2px solid #0000FF;
 }

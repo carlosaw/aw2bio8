@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 use App\Models\Page;
+use App\Models\Link;
 
 class AdminController extends Controller
 {
@@ -77,10 +78,44 @@ class AdminController extends Controller
     }
 
     public function pageLinks($slug) {
-        return view('admin/page_links', [
-            'menu' => 'links'
-        ]);
+        $user = Auth::user();//Pega usuario logado
+        $page = Page::where('slug', $slug)
+            ->where('id_user', $user->id)
+        ->first();
+
+        if($page) {
+            $links = Link::where('id_page', $page->id)
+                ->orderBy('order', 'ASC')
+            ->get();
+
+            return view('admin/page_links', [
+                'menu' => 'links',
+                'page' => $page,
+                'links' => $links
+            ]);
+        } else {
+            return redirect('/admin');
+        }       
     }
+    // Função interna para reordenar os links.
+    public function linkOrderUpdate($linkid, $pos) {
+        $user = Auth::user();
+
+        /* 
+        - Verificar se o link pertence a uma pagina do usuário logado.
+        - Lógica para trocar o ORDER no banco de dados.
+            - Verificar se Subiu ou Desceu
+            - se subiu:
+                - jogar os próximos items pra baixo                
+            - se desceu:
+                - jogar os items anteriores pra cima
+            - substituo o item que quero mudar
+            - atualizo todos os links
+        */ 
+
+        return [];
+    }
+
     public function pageDesign($slug) {
         return view('admin/page_design', [
             'menu' => 'design'
