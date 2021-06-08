@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Jun-2021 às 22:28
+-- Tempo de geração: 08-Jun-2021 às 21:48
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.4.13
 
@@ -57,9 +57,9 @@ CREATE TABLE `links` (
 --
 
 INSERT INTO `links` (`id`, `id_page`, `status`, `order`, `title`, `href`, `op_bg_color`, `op_text_color`, `op_border_type`) VALUES
-(1, 1, 1, 0, 'Facebook', 'https:facebook.com/awregulagens.com.br', '#0000FF', '#FFFFFF', 'rounded'),
+(1, 1, 1, 2, 'Facebook', 'https:facebook.com/awregulagens.com.br', '#0000FF', '#FFFFFF', 'rounded'),
 (2, 1, 1, 1, 'Youtube', 'https://youtube.com/awregulagens.com.br', '#FF0000', '#FFFFFF', 'rounded'),
-(3, 1, 1, 2, 'Site Pessoal', 'https:www.google.com.br', '#00FF00', '#000000', 'rounded'),
+(3, 1, 1, 0, 'Site Pessoal 2', 'https://www.google.com.br', '#ff4d00', '#000000', 'rounded'),
 (4, 2, 1, 0, 'Facebook', 'https:facebook.com/awregulagens.com.br', '#0000FF', '#FFFFFF', 'rounded'),
 (5, 2, 1, 1, 'Youtube', 'https://youtube.com/awregulagens.com.br', '#FF0000', '#FFFFFF', 'rounded'),
 (6, 2, 1, 2, 'Pessoal', 'https:www.google.com.br', '#00FF00', '#000000', 'rounded');
@@ -149,7 +149,8 @@ CREATE TABLE `views` (
 
 INSERT INTO `views` (`id`, `id_page`, `view_date`, `total`) VALUES
 (1, 1, '2021-06-07', 25),
-(2, 2, '2021-06-07', 6);
+(2, 2, '2021-06-07', 6),
+(3, 1, '2021-06-08', 63);
 
 --
 -- Índices para tabelas despejadas
@@ -205,7 +206,7 @@ ALTER TABLE `clicks`
 -- AUTO_INCREMENT de tabela `links`
 --
 ALTER TABLE `links`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `migrations`
@@ -229,7 +230,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `views`
 --
 ALTER TABLE `views`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
