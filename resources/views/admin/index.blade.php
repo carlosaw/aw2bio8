@@ -19,7 +19,7 @@
           <tr>
             <td>{{$page->op_title}} ({{$page->slug}})</td>
             <td>
-              <a href="{{url('/'.$page->slug)}}" target="_blank">Abrir</a>
+              <a href="{{url('/'.$page->slug)}}" target="_blank">Abrir</a><br/>
               <a href="{{url('/admin/'.$page->slug.'/links')}}">Links</a>
               <a href="{{url('/admin/'.$page->slug.'/design')}}">Aparência</a>
               <a href="{{url('/admin/'.$page->slug.'/stats')}}">Estatísticas</a>

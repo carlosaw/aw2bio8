@@ -143,3 +143,38 @@ table td {
 .link--item-buttons a:hover {
   border-bottom: 2px solid #0000FF;
 }
+
+tbody a:hover {
+  text-decoration: underline;
+}
+
+form {
+  margin: 20px;
+}
+form label {
+  display: block;
+  margin-bottom: 20px;
+}
+form input,
+form select {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  outline: 0;
+  padding: 0px 10px;
+}
+form input[type=submit] {
+  background-color: #3F7125;
+  border: 0;
+  color: #FFF;
+  cursor: pointer;
+}
+form input[type=submit]:hover {
+  background-color: #4f8d2d;
+}
+
+h3 {
+  margin-left: 20px;
+}
