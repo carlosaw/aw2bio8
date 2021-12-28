@@ -5,9 +5,16 @@ Ao descompactar, é necessário rodar o composer pra instalar as dependências e
 
 Vá até a pasta do projeto, pelo prompt/terminal e execute:
 
-composer install
+# composer install
 
 Depois é só aguardar.
+
+# Rodar projeto
+## php artisan serve
+
+# Browser
+## 127.0.0.1:8000/carlos
+## 127.0.0.1:8000/joaozinho
 
 Configuração
 Todos os arquivos de configuração e aplicação estão dentro da pasta src.
